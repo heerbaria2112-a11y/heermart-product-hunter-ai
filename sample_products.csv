@@ -1,2 +1,2 @@
-product_name,category,source,source_url,selling_price_inr,supplier_cost_inr,shipping_cost_inr,ad_cost_per_order_inr,fees_inr,expected_return_rto_cost_inr,evidence_notes
-Example product,Kitchen,Manual research,https://trends.google.com/trends/,499,150,60,80,30,25,Example only - replace with real research
+product_name,source,product_url,supplier_cost_inr,selling_price_inr,shipping_cost_inr,packaging_fees_inr,ad_cost_per_order_inr,expected_rto_cost_inr,stock_checked,price_checked_date,evidence_notes
+Portable mini juicer blender,EXAMPLE ONLY,https://example.com/replace-with-real-listing,0,0,0,0,0,0,No,YYYY-MM-DD,Replace with a real listing and real current values before use

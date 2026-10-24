@@ -1,58 +1,48 @@
-# HeerMart Product Hunter AI — Daily Research Edition
+# HeerMart Product Hunter AI — multi-source starter
 
-A free, open-source, rules-based research assistant for an India-focused Shopify store. It runs daily via GitHub Actions, reads configured public RSS feeds, categorises trend/discussion titles, ranks research leads, and publishes CSV/JSON reports.
+A free starter for India-focused product discovery. It combines public RSS discovery signals with a CSV importer for real supplier/marketplace listings and a profit comparison tool.
 
-## What is automatic
-- Scheduled daily run at 07:50 India Standard Time (02:20 UTC).
-- Google Trends India public RSS feed (subject to availability/format changes).
-- Optional public Reddit search RSS (may be unavailable or rate-limited).
-- Categorisation into Home, Fashion, Kitchen, Toys, Fitness, Accessories or General.
-- Transparent heuristic research-priority score, evidence URL and run date.
-- CSV/JSON report committed to `reports/` and visible in the Streamlit dashboard.
-- Manual run via GitHub Actions → Daily product research → Run workflow.
+## What it uses automatically
+- Google Trends India public RSS (if available)
+- Public Reddit product-discussion RSS (may be rate-limited)
+- Bing News RSS searches for product/shopping signals
 
-## What is not claimed
-- This is **not** a verified best-seller detector. The score is a heuristic for prioritising further research, not actual sales rank or demand forecast.
-- Views, likes, search interest, discussion and ad presence do not prove sales or profit.
-- The starter does not automatically scrape Facebook/Meta Ad Library, Pinterest, Instagram, TikTok or e-commerce sites. Use official permitted interfaces or manual research; do not bypass logins, paywalls, robots/access controls, or rate limits.
-- Supplier prices, product cost, delivery costs, conversion rates, ad cost, COD/RTO loss and net profit must be entered from real evidence. The dashboard never fabricates them.
-- Free services can change limits and availability. A GitHub-hosted workflow is not guaranteed to run if GitHub changes its policies or usage limits.
+Automatic sources can be unavailable or return irrelevant results; product-specific filtering reduces, but cannot eliminate, noise. A research score is a priority heuristic, not sales volume or a bestseller rank.
 
-## GitHub setup (no paid API keys)
-1. Create a public repository at https://github.com/new named `heermart-product-hunter-ai`.
-2. Upload all files and folders from this project, including `.github/workflows/daily-research.yml`.
-3. In repository **Settings → Actions → General**, ensure workflow permissions allow read/write access to repository contents. If policy prevents write access, the workflow can still be changed to upload reports as workflow artifacts instead.
-4. Open **Actions → Daily product research → Run workflow** to test it immediately.
-5. Check `reports/latest_status.json` and `reports/latest_products.csv`. GitHub Actions will also run on its schedule.
-6. To run the dashboard locally:
-   ```bash
-   python -m venv .venv
-   # Windows:
-   .venv\Scripts\activate
-   # macOS/Linux:
-   source .venv/bin/activate
-   pip install -r requirements.txt
-   streamlit run app.py
-   ```
-7. Optional dashboard hosting: deploy `app.py` on Streamlit Community Cloud if its current free tier is available. Connect the GitHub repository and select `app.py`.
+## What it does NOT automatically access
+This project does not log into or scrape Dropdash, Meesho, IndiaMART, Amazon, Flipkart, Meta Ad Library, or Pinterest. Marketplace terms, bot controls, account permissions, and API access vary; do not bypass them. Supplier prices, inventory, order volumes, shipping fees, and RTO rates are not invented. Use the dashboard CSV importer to compare real listing details you verify yourself, or add an authorized API integration if you have one.
 
-## Files
-- `research.py`: scheduled public-feed collector, category heuristics, score and CSV/JSON reports.
-- `app.py`: Streamlit dashboard and editable per-candidate profit calculator.
-- `.github/workflows/daily-research.yml`: scheduled daily automation.
-- `reports/`: latest report output.
-- `sample_products.csv`: blank/illustrative research worksheet template.
+## Run research locally
+Install Python 3.11+; in this folder run:
 
-## Score method
-`research_score` is a rough 0–100 research-priority heuristic using title keyword signals, source type, and basic title shape. It does not measure product sales, conversion, search volume, or profit. Improve it only with traceable data, timestamped sources, and documented scoring rules.
+```bash
+python -m venv .venv
+```
 
-## Suggested safe workflow before selling
-1. Validate a trend using multiple independent sources and compare interest over time.
-2. Check competitor prices, reviews, recent ad creatives and repeated complaints using permitted public interfaces.
-3. Obtain supplier quotation and shipping/COD/RTO terms.
-4. Calculate net profit with actual inputs, including advertising and return losses.
-5. Test a small budget or sample order before scaling.
-6. Keep the source URL, date, evidence notes and uncertainty for every decision.
+Windows:
+```bat
+.venv\Scripts\python -m pip install -r requirements.txt
+.venv\Scripts\python research.py
+.venv\Scripts\python -m streamlit run app.py
+```
 
-## Responsible access
-Respect each platform's terms, API requirements, rate limits, robots/access controls and privacy rules. Do not put secrets in code or commit customer data. The starter uses no paid AI model or paid API key.
+macOS/Linux:
+```bash
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python research.py
+.venv/bin/python -m streamlit run app.py
+```
+
+## GitHub Actions
+Workflow `.github/workflows/daily-research.yml` can be manually run or scheduled. It writes `reports/latest_products.csv` and `reports/latest_status.json`.
+
+## Supplier CSV
+Download the template from the dashboard. Required columns:
+`product_name, source, product_url, supplier_cost_inr, selling_price_inr, shipping_cost_inr, packaging_fees_inr, ad_cost_per_order_inr, expected_rto_cost_inr`.
+
+Use real current values. The dashboard calculates estimated profit as selling price minus the costs entered. Add taxes, payment/COD fees, discounts, platform overhead, and expected returns if applicable.
+
+## Safety and accuracy
+- Never put passwords, OTPs, cookies, or private API keys in CSV files or GitHub commits.
+- Check a listing's current price, stock, delivery coverage, return/RTO terms, and supplier reliability before selling.
+- Search trends, discussion, news, and reviews are not proof of sales.
