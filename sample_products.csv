@@ -1,0 +1,2 @@
+product_name,category,source,source_url,selling_price_inr,supplier_cost_inr,shipping_cost_inr,ad_cost_per_order_inr,fees_inr,expected_return_rto_cost_inr,evidence_notes
+Example product,Kitchen,Manual research,https://trends.google.com/trends/,499,150,60,80,30,25,Example only - replace with real research
