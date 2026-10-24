@@ -1,0 +1,26 @@
+{
+  "run_date_utc": "2026-10-24",
+  "items_found": 10,
+  "source_status": [
+    {
+      "source": "Google Trends India",
+      "feed_url": "https://trends.google.com/trending/rss?geo=IN",
+      "status": "ok",
+      "items_found": 10,
+      "error": ""
+    },
+    {
+      "source": "Reddit product discovery",
+      "feed_url": "https://www.reddit.com/search.rss/?q=product%20recommendations%20OR%20must%20have%20gadgets&sort=hot&t=week",
+      "status": "unavailable",
+      "items_found": 0,
+      "error": "HTTPError: 403 Client Error: Blocked for url: https://www.reddit.com/search.rss/?q=product%20recommendations%20OR%20must%20have%20gadgets&sort=hot&t=week"
+    }
+  ],
+  "limitations": [
+    "Rank is a heuristic research-priority score, not a sales rank.",
+    "No sales volumes or profit values are inferred from social signals.",
+    "Public RSS sources can change, be unavailable, or rate-limit requests.",
+    "Meta Ad Library and Pinterest are not automatically scraped; use their permitted official interfaces/manual research."
+  ]
+}
