@@ -1,6 +1,6 @@
 {
-  "run_date_utc": "2026-10-28",
-  "product_signals_kept": 1,
+  "run_date_utc": "2026-10-29",
+  "product_signals_kept": 0,
   "source_status": [
     {
       "source": "Google Trends India",
@@ -30,8 +30,8 @@
       "source": "Bing News viral shopping products",
       "feed_url": "https://www.bing.com/news/search?q=trending%20products%20India%20shopping%20gadget%202026&format=rss",
       "status": "ok",
-      "items_seen": 4,
-      "product_signals_kept": 1,
+      "items_seen": 3,
+      "product_signals_kept": 0,
       "error": ""
     }
   ],
