@@ -1,6 +1,6 @@
 {
-  "run_date_utc": "2026-10-29",
-  "product_signals_kept": 0,
+  "run_date_utc": "2026-10-30",
+  "product_signals_kept": 1,
   "source_status": [
     {
       "source": "Google Trends India",
@@ -22,7 +22,7 @@
       "source": "Bing News product discovery",
       "feed_url": "https://www.bing.com/news/search?q=%28product%20OR%20gadget%20OR%20kitchen%20tool%20OR%20home%20organizer%29%20India%20price%20review&format=rss",
       "status": "ok",
-      "items_seen": 0,
+      "items_seen": 1,
       "product_signals_kept": 0,
       "error": ""
     },
@@ -30,8 +30,8 @@
       "source": "Bing News viral shopping products",
       "feed_url": "https://www.bing.com/news/search?q=trending%20products%20India%20shopping%20gadget%202026&format=rss",
       "status": "ok",
-      "items_seen": 3,
-      "product_signals_kept": 0,
+      "items_seen": 4,
+      "product_signals_kept": 1,
       "error": ""
     }
   ],
