@@ -1,5 +1,5 @@
 {
-  "run_date_utc": "2026-11-04",
+  "run_date_utc": "2026-11-05",
   "product_signals_kept": 2,
   "source_status": [
     {
@@ -30,7 +30,7 @@
       "source": "Bing News viral shopping products",
       "feed_url": "https://www.bing.com/news/search?q=trending%20products%20India%20shopping%20gadget%202026&format=rss",
       "status": "ok",
-      "items_seen": 5,
+      "items_seen": 4,
       "product_signals_kept": 2,
       "error": ""
     }
