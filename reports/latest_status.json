@@ -1,5 +1,5 @@
 {
-  "run_date_utc": "2026-11-13",
+  "run_date_utc": "2026-11-14",
   "product_signals_kept": 6,
   "source_status": [
     {
@@ -22,7 +22,7 @@
       "source": "Bing News product discovery",
       "feed_url": "https://www.bing.com/news/search?q=%28product%20OR%20gadget%20OR%20kitchen%20tool%20OR%20home%20organizer%29%20India%20price%20review&format=rss",
       "status": "ok",
-      "items_seen": 2,
+      "items_seen": 3,
       "product_signals_kept": 1,
       "error": ""
     },
