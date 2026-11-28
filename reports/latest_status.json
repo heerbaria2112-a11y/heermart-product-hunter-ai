@@ -1,6 +1,6 @@
 {
-  "run_date_utc": "2026-11-27",
-  "product_signals_kept": 4,
+  "run_date_utc": "2026-11-28",
+  "product_signals_kept": 5,
   "source_status": [
     {
       "source": "Google Trends India",
@@ -23,7 +23,7 @@
       "feed_url": "https://www.bing.com/news/search?q=%28product%20OR%20gadget%20OR%20kitchen%20tool%20OR%20home%20organizer%29%20India%20price%20review&format=rss",
       "status": "ok",
       "items_seen": 2,
-      "product_signals_kept": 0,
+      "product_signals_kept": 1,
       "error": ""
     },
     {
